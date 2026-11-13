@@ -1,0 +1,51 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+article{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px
+}
+
+article h2{
+    width: 100%;
+}
+
+article p{
+    flex: 1;
+}
+
+.fancy-button{
+    display: block;
+    width: 200px;
+    border: 1px solid #AAA;
+    text-decoration: none;
+    color: #222;
+    padding: 6px 10px;
+    margin-top: 10px;
+    text-align: center;
+    position: relative;
+    transition: color .3s;
+}
+
+.fancy-button::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background-color: darkslategrey;
+    z-index: -1;
+
+    left: 100%;
+    width: 0%;
+    transition: .3s;
+}
+.fancy-button:hover{
+    color: white;
+}
+.fancy-button:hover::before{
+    left: 0%;
+    width: 100%;
+    transition: width .3s;
+}
